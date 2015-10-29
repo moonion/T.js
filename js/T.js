@@ -851,8 +851,12 @@
     }
   };
 
-  if (typeof exports !== 'undefined') {
-    exports = T;
+  T.isDefine = function(lang) {
+      return langs[lang];
+  };
+
+  if (typeof module.exports !== 'undefined') {
+      module.exports = T;
   } else {
     var root = (typeof self == 'object' && self.self == self && self) ||
                (typeof global == 'object' && global.global == global && global);
